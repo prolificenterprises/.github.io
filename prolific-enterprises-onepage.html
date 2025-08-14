@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prolific Enterprises — Excellence Across Industries</title>
+  <meta name="description" content="Prolific Enterprises: Prestige Auto Repair & Rentals, Prestige General Contracting, and Prestige Transportation logistics & delivery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0e1116;
+      --card:#151a22;
+      --ink:#e8ecf1;
+      --muted:#9aa5b1;
+      --brand:#3ea6ff;
+      --brand-2:#4ade80;
+      --accent:#f59e0b;
+      --danger:#f43f5e;
+      --radius:14px;
+      --shadow:0 10px 25px rgba(0,0,0,.35);
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Sego UI,Roboto,Helvetica,Arial,sans-serif;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    /* Header */
+    .site-header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(8px);
+      background:linear-gradient(0deg, rgba(14,17,22,.65), rgba(14,17,22,.85));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      margin:0 auto;max-width:var(--maxw);padding:14px 18px;display:flex;align-items:center;gap:14px;justify-content:space-between;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{
+      width:36px;height:36px;border-radius:10px;background:
+        radial-gradient(120px 40px at 120% -10%, var(--brand) 0%, transparent 60%),
+        radial-gradient(90px 40px at -10% 120%, var(--brand-2) 0%, transparent 60%),
+        linear-gradient(135deg,#1f2937,#0b0f14);
+      box-shadow: 0 6px 18px rgba(62,166,255,.35), inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .brand h1{font-size:18px;letter-spacing:.3px;margin:0;font-weight:800}
+    .brand small{display:block;color:var(--muted);font-weight:500;font-size:11px;margin-top:2px;letter-spacing:.2px}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{padding:8px 12px;border-radius:10px;color:var(--muted)}
+    .nav-links a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+    .cta{padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,var(--brand),#8b5cf6);font-weight:700}
+    .menu-btn{display:none;background:none;border:0;color:var(--ink);font-size:28px;cursor:pointer}
+    @media (max-width: 860px){
+      .nav-links{display:none}
+      .menu-btn{display:block}
+    }
+    .mobile-menu{display:none;flex-direction:column;gap:8px;padding:10px 18px;border-top:1px solid rgba(255,255,255,.06);}
+    .mobile-menu a{padding:12px;border-radius:12px;background:rgba(255,255,255,.04);color:var(--ink)}
+    /* Hero */
+    .hero{
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(800px 300px at 10% -10%, rgba(62,166,255,.25), transparent 50%),
+        radial-gradient(600px 280px at 90% 10%, rgba(74,222,128,.18), transparent 60%),
+        linear-gradient(180deg,#0c0f14,#0e1116 40%);
+    }
+    .hero-inner{margin:0 auto;max-width:var(--maxw);padding:90px 18px 64px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .kicker{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(62,166,255,.15);border:1px solid rgba(62,166,255,.35);font-weight:700;color:#bfe5ff;font-size:12px;letter-spacing:.2px}
+    .title{font-size:44px;line-height:1.05;margin:14px 0 10px;font-weight:900}
+    .subtitle{color:var(--muted);font-size:18px;max-width:60ch}
+    .hero-ctas{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:700;border:1px solid rgba(255,255,255,.1)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#8b5cf6)}
+    .btn.secondary{background:rgba(255,255,255,.06)}
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      padding:20px;box-shadow:var(--shadow)
+    }
+    .hero-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .stat{
+      background:var(--card);
+      padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,.06)
+    }
+    .stat b{font-size:22px}
+    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.title{font-size:36px}}
+    /* Sections */
+    section{margin:0 auto;max-width:var(--maxw);padding:64px 18px}
+    .section-title{font-size:28px;margin:0 0 14px}
+    .section-sub{color:var(--muted);max-width:70ch}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px
+    }
+    .card .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.2px}
+    .card h3{margin:6px 0 0;font-size:18px}
+    .card p{color:var(--muted)}
+    .mini-cta{margin-top:auto;display:inline-block;padding:10px 12px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.06);font-weight:700}
+    @media (max-width:900px){.cards{grid-template-columns:1fr}}
+    /* Why Choose Us */
+    .bullets{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+    .bullet{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:16px}
+    .bullet b{display:block;margin-bottom:6px}
+    @media (max-width:900px){.bullets{grid-template-columns:1fr 1fr}}
+    @media (max-width:580px){.bullets{grid-template-columns:1fr}}
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+    .contact .panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)
+    }
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    form label{display:block;font-weight:700;margin:8px 0 6px}
+    input,select,textarea{
+      width:100%;padding:12px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);
+      background:#0b0f14;color:var(--ink);outline:none
+    }
+    textarea{min-height:130px;resize:vertical}
+    .form-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .note{color:var(--muted);font-size:13px}
+    @media (max-width:900px){.contact{grid-template-columns:1fr} form .row{grid-template-columns:1fr}}
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:34px 18px;color:var(--muted)}
+    .foot-inner{margin:0 auto;max-width:var(--maxw);display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+    .social{display:flex;gap:12px}
+    .social a{padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    /* Helpers */
+    .muted{color:var(--muted)}
+    .map-embed{border:0;width:100%;height:260px;border-radius:14px;filter:grayscale(.2) contrast(1.05) brightness(.95)}
+    /* Accessibility focus */
+    :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div>
+          <h1>Prolific Enterprises</h1>
+          <small>Excellence Across Industries</small>
+        </div>
+      </div>
+      <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <div class="nav-links" role="navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#divisions">Our Divisions</a>
+        <a href="#contact" class="cta">Get a Quote</a>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#divisions">Our Divisions</a>
+      <a href="#contact">Get a Quote</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home" class="hero" role="main">
+    <section class="hero-inner">
+      <div>
+        <span class="kicker">Multi‑Service • Auto • Contracting • Logistics</span>
+        <h2 class="title">Delivering reliable services<br/>under one trusted brand.</h2>
+        <p class="subtitle">From precision auto repair and flexible car rentals to full‑service general contracting and dependable trucking logistics, Prolific Enterprises powers your projects end‑to‑end.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#divisions">Explore Services</a>
+          <a class="btn secondary" href="#contact">Contact Us</a>
+        </div>
+        <div class="hero-grid" aria-hidden="true" style="margin-top:18px">
+          <div class="stat"><b>15+ yrs</b><br><span class="muted">Combined expertise</span></div>
+          <div class="stat"><b>24/7</b><br><span class="muted">Logistics dispatch</span></div>
+          <div class="stat"><b>Same‑day</b><br><span class="muted">Auto service slots</span></div>
+          <div class="stat"><b>Nationwide</b><br><span class="muted">Carrier network</span></div>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Highlights">
+        <h3 style="margin:0 0 10px">What we do</h3>
+        <ul class="muted" style="margin:0 0 12px 16px">
+          <li>Auto diagnostics, repairs & maintenance</li>
+          <li>Used car rentals — daily, weekly, monthly</li>
+          <li>Residential & commercial general contracting</li>
+          <li>Trucking logistics, LTL/FTL & last‑mile delivery</li>
+        </ul>
+        <div class="note">Operate as: <b>Prestige Auto Repair & Rentals</b>, <b>Prestige General Contracting</b>, and <b>Prestige Transportation</b>.</div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- About -->
+  <section id="about" aria-labelledby="about-title">
+    <h2 id="about-title" class="section-title">Who We Are</h2>
+    <p class="section-sub">Prolific Enterprises is a diversified operator focused on quality workmanship, transparent pricing, and on‑time delivery. Our divisions collaborate to give customers one seamless partner across automotive care, construction, and freight logistics.</p>
+  </section>
+
+  <!-- Divisions -->
+  <section id="divisions" aria-labelledby="divisions-title">
+    <h2 id="divisions-title" class="section-title">Our Divisions</h2>
+    <p class="section-sub">Three specialized teams, one customer‑first standard.</p>
+
+    <div class="cards" role="list">
+      <!-- Auto Repair & Rentals -->
+      <article class="card" role="listitem">
+        <span class="tag">Automotive</span>
+        <h3>Prestige Auto Repair & Used Car Rentals</h3>
+        <p>Complete diagnostics, brakes, suspension, A/C, tires, and preventive maintenance. Affordable rental vehicles for daily, weekly, or monthly use.</p>
+        <ul class="muted" style="margin:0 0 10px 18px;">
+          <li>ASE‑style service workflow & digital inspections</li>
+          <li>Pickup/Drop‑off & roadside coordination</li>
+          <li>Fleet maintenance plans available</li>
+        </ul>
+        <a class="mini-cta" href="#contact" aria-label="Book automotive service">Book a Service</a>
+      </article>
+
+      <!-- General Contracting -->
+      <article class="card" role="listitem">
+        <span class="tag">Construction</span>
+        <h3>Prestige General Contracting</h3>
+        <p>Residential & commercial contracting with a craftsmanship standard — remodels, build‑outs, exterior improvements, and facilities maintenance.</p>
+        <ul class="muted" style="margin:0 0 10px 18px;">
+          <li>Project planning, permitting & site management</li>
+          <li>Licensed trades network (electrical, plumbing, HVAC)</li>
+          <li>Transparent bids & milestone updates</li>
+        </ul>
+        <a class="mini-cta" href="#contact" aria-label="Request a construction quote">Request a Quote</a>
+      </article>
+
+      <!-- Transportation -->
+      <article class="card" role="listitem">
+        <span class="tag">Logistics</span>
+        <h3>Prestige Transportation</h3>
+        <p>Trucking logistics and delivery solutions tailored to your lane & schedule — regional and nationwide coverage.</p>
+        <ul class="muted" style="margin:0 0 10px 18px;">
+          <li>LTL & FTL, box truck & last‑mile options</li>
+          <li>Real‑time tracking & proactive communication</li>
+          <li>Dedicated routes & surge capacity</li>
+        </ul>
+        <a class="mini-cta" href="#contact" aria-label="Schedule a shipment">Schedule a Delivery</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section aria-labelledby="why-title">
+    <h2 id="why-title" class="section-title">Why Choose Prolific</h2>
+    <p class="section-sub">A single partner that’s easy to reach and accountable end‑to‑end.</p>
+    <div class="bullets">
+      <div class="bullet"><b>Multi‑Industry Expertise</b><span class="muted">Specialists across auto, construction, and logistics.</span></div>
+      <div class="bullet"><b>Reliable & Transparent</b><span class="muted">Clear scopes, on‑time updates, no surprises.</span></div>
+      <div class="bullet"><b>Competitive Pricing</b><span class="muted">Right‑sized bids with options to fit your budget.</span></div>
+      <div class="bullet"><b>Customer‑First</b><span class="muted">We prioritize safety, quality, and communication.</span></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="section-title">Get a Quote</h2>
+    <p class="section-sub">Tell us what you need and the right division will follow up quickly.</p>
+
+    <div class="contact">
+      <div class="panel">
+        <form id="quoteForm" novalidate>
+          <div class="row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Full name" required aria-required="true" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required aria-required="true" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="(555) 555‑1234" />
+            </div>
+            <div>
+              <label for="service">Service Needed</label>
+              <select id="service" name="service" required aria-required="true">
+                <option value="">Select a division…</option>
+                <option>Prestige Auto Repair & Rentals</option>
+                <option>Prestige General Contracting</option>
+                <option>Prestige Transportation (Logistics)</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message" placeholder="Briefly describe your needs…" required aria-required="true"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Submit Request</button>
+            <span class="note">Or email us: <a href="mailto:info@prolificenterprises.com">info@prolificenterprises.com</a></span>
+          </div>
+          <p id="formStatus" class="note" role="status" aria-live="polite" style="margin-top:8px"></p>
+        </form>
+      </div>
+      <aside class="panel" aria-label="Contact information">
+        <h3 style="margin-top:2px">Contact</h3>
+        <p class="muted" style="margin-top:-4px">Replace placeholders with your real info.</p>
+        <p><b>Phone:</b> <a href="tel:+1-555-0100">+1 (555) 010‑0000</a><br/>
+           <b>Email:</b> <a href="mailto:info@prolificenterprises.com">info@prolificenterprises.com</a></p>
+        <p><b>Main Office:</b><br/>
+           1234 Enterprise Blvd, Suite 200<br/>
+           Akron, OH 44313</p>
+        <iframe class="map-embed" title="Prolific Enterprises — Map" loading="lazy"
+          src="https://www.google.com/maps?q=Akron%20OH%2044313&output=embed"
+          allowfullscreen></iframe>
+        <p class="note" style="margin-top:10px">Hours: Mon–Fri 8:00am–6:00pm</p>
+      </aside>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-inner">
+      <div>&copy; <span id="year"></span> Prolific Enterprises. All Rights Reserved.</div>
+      <div class="social" aria-label="Social links">
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.querySelector('.menu-btn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => {
+      const open = menu.style.display === 'flex';
+      menu.style.display = open ? 'none' : 'flex';
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+    // Close mobile menu on link click
+    menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.style.display = 'none';
+      btn.setAttribute('aria-expanded', 'false');
+    }));
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Simple client-side validation + demo submission
+    const form = document.getElementById('quoteForm');
+    const status = document.getElementById('formStatus');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      status.textContent = '';
+      const data = new FormData(form);
+      const required = ['name','email','service','message'];
+      const missing = required.filter(k => !String(data.get(k)||'').trim());
+      if(missing.length){
+        status.textContent = 'Please fill out all required fields.';
+        status.style.color = '#fca5a5';
+        return;
+      }
+      // Demo-only: simulate success
+      status.textContent = 'Thanks! Your request has been received. We will contact you shortly.';
+      status.style.color = '#4ade80';
+      form.reset();
+    });
+  </script>
+
+  <!--
+    Notes for customization:
+    - If your brand uses "Prestiege" instead of "Prestige," search/replace the word in this file.
+    - Replace contact info, map, and social links with real details.
+    - To connect the form to email or CRM, add a backend endpoint and set form action/method.
+  -->
+</body>
+</html>
